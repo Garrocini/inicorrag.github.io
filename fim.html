@@ -19,7 +19,6 @@
 body {
 
     min-height: 100vh;
-
     overflow: hidden;
 
     font-family:
@@ -42,7 +41,6 @@ body {
 
     animation:
         fundoFesta 9s ease infinite;
-
 }
 
 @keyframes fundoFesta {
@@ -58,7 +56,6 @@ body {
     100% {
         background-position: 0% 50%;
     }
-
 }
 
 .pagina {
@@ -69,7 +66,6 @@ body {
     position: relative;
 
     display: flex;
-
     flex-direction: column;
 
     justify-content: center;
@@ -80,37 +76,40 @@ body {
     padding: 20px;
 
     z-index: 5;
-
 }
 
 .titulo {
 
+    width: 95vw;
+    max-width: 1200px;
+
     font-size:
-        clamp(65px, 12vw, 180px);
+        clamp(45px, 8vw, 115px);
 
     font-weight: 1000;
 
-    line-height: .75;
+    line-height: .9;
 
-    letter-spacing: -7px;
+    letter-spacing: -3px;
 
     color: white;
 
+    text-align: center;
+
     transform:
-        rotate(-3deg);
+        rotate(-2deg);
 
     -webkit-text-stroke:
-        6px #111;
+        4px #111;
 
     text-shadow:
-        10px 10px 0 #111;
+        7px 7px 0 #111;
 
     animation:
         tituloEntrada
         .7s
         cubic-bezier(.2,1.5,.5,1)
         forwards;
-
 }
 
 @keyframes tituloEntrada {
@@ -122,7 +121,6 @@ body {
         transform:
             scale(.2)
             rotate(-20deg);
-
     }
 
     to {
@@ -131,10 +129,8 @@ body {
 
         transform:
             scale(1)
-            rotate(-3deg);
-
+            rotate(-2deg);
     }
-
 }
 
 .subtitulo {
@@ -152,7 +148,7 @@ body {
         15px 35px;
 
     font-size:
-        clamp(26px, 4vw, 55px);
+        clamp(24px, 3.5vw, 48px);
 
     font-weight: 1000;
 
@@ -165,7 +161,6 @@ body {
         ease
         .6s
         backwards;
-
 }
 
 @keyframes aparecerSubtitulo {
@@ -177,9 +172,7 @@ body {
         transform:
             scale(0)
             rotate(15deg);
-
     }
-
 }
 
 .imagem-final {
@@ -217,7 +210,6 @@ body {
         ease-in-out
         1.7s
         infinite alternate;
-
 }
 
 @keyframes personagemEntrada {
@@ -230,9 +222,7 @@ body {
             translateY(600px)
             rotate(20deg)
             scale(.2);
-
     }
-
 }
 
 @keyframes personagemFesta {
@@ -242,7 +232,6 @@ body {
         transform:
             translateY(0)
             rotate(-2deg);
-
     }
 
     to {
@@ -250,9 +239,7 @@ body {
         transform:
             translateY(-12px)
             rotate(2deg);
-
     }
-
 }
 
 .estrela {
@@ -274,52 +261,35 @@ body {
         3s
         linear
         infinite;
-
 }
 
 .e1 {
-
     left: 5%;
     top: 8%;
-
 }
 
 .e2 {
-
     right: 6%;
     top: 12%;
-
-    animation-direction:
-        reverse;
-
+    animation-direction: reverse;
 }
 
 .e3 {
-
     left: 12%;
     bottom: 8%;
-
 }
 
 .e4 {
-
     right: 12%;
     bottom: 10%;
-
-    animation-direction:
-        reverse;
-
+    animation-direction: reverse;
 }
 
 @keyframes girarEstrela {
 
     to {
-
-        transform:
-            rotate(360deg);
-
+        transform: rotate(360deg);
     }
-
 }
 
 .confete {
@@ -334,7 +304,6 @@ body {
     pointer-events: none;
 
     top: 50%;
-
 }
 
 .confete.esquerda {
@@ -346,7 +315,6 @@ body {
         var(--tempo)
         cubic-bezier(.15,.7,.4,1)
         forwards;
-
 }
 
 .confete.direita {
@@ -358,7 +326,6 @@ body {
         var(--tempo)
         cubic-bezier(.15,.7,.4,1)
         forwards;
-
 }
 
 @keyframes soprarEsquerda {
@@ -370,7 +337,6 @@ body {
             rotate(0deg);
 
         opacity: 1;
-
     }
 
     35% {
@@ -381,7 +347,6 @@ body {
                 var(--altura1)
             )
             rotate(360deg);
-
     }
 
     100% {
@@ -394,9 +359,7 @@ body {
             rotate(1000deg);
 
         opacity: .1;
-
     }
-
 }
 
 @keyframes soprarDireita {
@@ -408,7 +371,6 @@ body {
             rotate(0deg);
 
         opacity: 1;
-
     }
 
     35% {
@@ -419,7 +381,6 @@ body {
                 var(--altura1)
             )
             rotate(-360deg);
-
     }
 
     100% {
@@ -432,9 +393,7 @@ body {
             rotate(-1000deg);
 
         opacity: .1;
-
     }
-
 }
 
 .duvida {
@@ -467,23 +426,17 @@ body {
         ease
         5s
         forwards;
-
 }
 
 @keyframes revelarDuvida {
 
     from {
-
         opacity: 0;
-
     }
 
     to {
-
         opacity: .6;
-
     }
-
 }
 
 .flash {
@@ -504,52 +457,52 @@ body {
         flash
         .5s
         ease;
-
 }
 
 @keyframes flash {
 
     0% {
-
         opacity: 1;
-
     }
 
     100% {
-
         opacity: 0;
-
     }
-
 }
 
 @media(max-width:600px) {
 
     .pagina {
-
         padding: 15px;
-
     }
 
     .titulo {
 
-        letter-spacing: -3px;
+        width: 94vw;
+
+        font-size:
+            clamp(40px, 13vw, 70px);
+
+        letter-spacing: -2px;
 
         -webkit-text-stroke:
             3px #111;
 
         text-shadow:
-            6px 6px 0 #111;
-
+            5px 5px 0 #111;
     }
 
     .subtitulo {
+
+        max-width: 90vw;
+
+        padding:
+            12px 20px;
 
         border-width: 4px;
 
         box-shadow:
             6px 6px 0 #111;
-
     }
 
     .imagem-final {
@@ -559,112 +512,67 @@ body {
         max-height: 65vh;
 
         margin-top: 25px;
-
     }
-
 }
 
 </style>
 
 </head>
 
-
 <body>
-
 
 <div class="flash"></div>
 
-
 <div class="pagina">
 
-
-    <div class="estrela e1">
-        ★
-    </div>
-
-    <div class="estrela e2">
-        ★
-    </div>
-
-    <div class="estrela e3">
-        ★
-    </div>
-
-    <div class="estrela e4">
-        ★
-    </div>
-
+    <div class="estrela e1">★</div>
+    <div class="estrela e2">★</div>
+    <div class="estrela e3">★</div>
+    <div class="estrela e4">★</div>
 
     <h1 class="titulo">
-
         PARABÉNS!
-
     </h1>
 
-
     <div class="subtitulo">
-
         VOCÊ PERDEU SEU TEMPO.
-
     </div>
 
-
     <img
-
         class="imagem-final"
-
         src="https://drive.google.com/thumbnail?id=1UYfdx-fSRoczRkPbglqZtCjkg7mIm41d&sz=w2000"
-        
         alt="Parabéns"
-
     >
 
-
 </div>
-
 
 <div class="duvida">
-
     ou será que não?
-
 </div>
-
 
 <script>
 
 const cores = [
-
     "#ffea00",
-
     "#ff006e",
-
     "#00f5d4",
-
     "#ffffff",
-
     "#9b5de5",
-
     "#fb5607",
-
     "#00bbf9"
-
 ];
-
 
 function criarConfete(lado) {
 
     const confete =
         document.createElement("div");
 
-
     confete.classList.add(
         "confete",
         lado
     );
 
-
     confete.style.background =
-
         cores[
             Math.floor(
                 Math.random()
@@ -673,13 +581,11 @@ function criarConfete(lado) {
             )
         ];
 
-
     const largura =
         Math.random() * 10 + 7;
 
     const altura =
         Math.random() * 18 + 10;
-
 
     confete.style.width =
         largura + "px";
@@ -687,9 +593,7 @@ function criarConfete(lado) {
     confete.style.height =
         altura + "px";
 
-
     confete.style.top =
-
         (
             Math.random()
             *
@@ -697,14 +601,10 @@ function criarConfete(lado) {
             +
             10
         )
-
         + "%";
 
-
     confete.style.setProperty(
-
         "--altura1",
-
         (
             Math.random()
             *
@@ -712,16 +612,11 @@ function criarConfete(lado) {
             -
             150
         )
-
         + "px"
-
     );
 
-
     confete.style.setProperty(
-
         "--altura2",
-
         (
             Math.random()
             *
@@ -729,16 +624,11 @@ function criarConfete(lado) {
             -
             250
         )
-
         + "px"
-
     );
 
-
     confete.style.setProperty(
-
         "--tempo",
-
         (
             Math.random()
             *
@@ -746,11 +636,8 @@ function criarConfete(lado) {
             +
             2.5
         )
-
         + "s"
-
     );
-
 
     if(
         Math.random() > .7
@@ -758,22 +645,17 @@ function criarConfete(lado) {
 
         confete.style.borderRadius =
             "50%";
-
     }
-
 
     document.body.appendChild(
         confete
     );
 
-
     setTimeout(
         () => confete.remove(),
         5000
     );
-
 }
-
 
 for(
     let i = 0;
@@ -796,9 +678,7 @@ for(
 
         i * 15
     );
-
 }
-
 
 setInterval(
     () => {
@@ -816,17 +696,14 @@ setInterval(
                 :
                 "direita"
             );
-
         }
 
     },
 
     650
-
 );
 
 </script>
-
 
 </body>
 
