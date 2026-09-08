@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CIGARRO</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(circle at center, #180027 0%, #07000c 55%, #000 100%);
+
+    color: white;
+
+    font-family: "Courier New", monospace;
+}
+
+/* =========================
+   TELA PRINCIPAL
+========================= */
+
+.pagina {
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    padding: 50px 20px;
+
+}
+
+h1 {
+
+    position: absolute;
+
+    top: 35px;
+
+    font-size: clamp(30px, 6vw, 70px);
+
+    letter-spacing: 15px;
+
+    color: #b968ff;
+
+    opacity: .85;
+
+}
+
+
+/* =========================
+   CIGARRO
+========================= */
+
+.cigarro-container {
+
+    width: min(430px, 80vw);
+    height: 520px;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    margin-top: 80px;
+
+}
+
+
+/* imagem */
+
+.cigarro {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    position: absolute;
+
+    bottom: 0;
+
+    z-index: 4;
+
+    filter:
+        drop-shadow(0 15px 20px rgba(0,0,0,.7));
+
+    animation:
+        queimarImagem 12s linear forwards;
+
+}
+
+
+/*
+A imagem vai sendo "consumida"
+de cima para baixo.
+*/
+
+@keyframes queimarImagem {
+
+    0% {
+        clip-path: inset(0 0 0 0);
+        opacity: 1;
+    }
+
+    80% {
+        clip-path: inset(85% 0 0 0);
+        opacity: 1;
+    }
+
+    100% {
+        clip-path: inset(100% 0 0 0);
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================
+   BRASA
+========================= */
+
+.brasa {
+
+    position: absolute;
+
+    z-index: 8;
+
+    width: 160px;
+    height: 14px;
+
+    top: 5%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+            #fff6a0 0%,
+            #ff9d00 25%,
+            #ff3600 55%,
+            transparent 75%
+        );
+
+    filter:
+        blur(2px);
+
+    box-shadow:
+        0 0 20px #ff7200,
+        0 0 50px #ff2a00;
+
+    animation:
+        descerBrasa 12s linear forwards,
+        pulsar .25s infinite alternate;
+
+}
+
+
+@keyframes descerBrasa {
+
+    from {
+        top: 5%;
+    }
+
+    to {
+        top: 94%;
+    }
+
+}
+
+
+@keyframes pulsar {
+
+    from {
+        opacity: .55;
+        transform: scaleX(.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scaleX(1.1);
+    }
+
+}
+
+
+/* =========================
+   FUMAÇA
+========================= */
+
+.fumaca {
+
+    position: absolute;
+
+    width: 70px;
+    height: 70px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(190,100,255,.5),
+            rgba(100,20,150,.15) 50%,
+            transparent 70%
+        );
+
+    filter: blur(8px);
+
+    pointer-events: none;
+
+    z-index: 2;
+
+}
+
+
+.f1 {
+    animation: fuma1 4s infinite;
+}
+
+.f2 {
+    animation: fuma2 5s infinite 1s;
+}
+
+.f3 {
+    animation: fuma3 4.5s infinite 2s;
+}
+
+
+@keyframes fuma1 {
+
+    from {
+        transform:
+            translate(0, 30px)
+            scale(.5);
+
+        opacity: 0;
+    }
+
+    30% {
+        opacity: .7;
+    }
+
+    to {
+        transform:
+            translate(-60px, -280px)
+            scale(2.3);
+
+        opacity: 0;
+    }
+
+}
+
+
+@keyframes fuma2 {
+
+    from {
+        transform:
+            translate(20px, 30px)
+            scale(.4);
+
+        opacity: 0;
+    }
+
+    30% {
+        opacity: .6;
+    }
+
+    to {
+        transform:
+            translate(80px, -320px)
+            scale(2.5);
+
+        opacity: 0;
+    }
+
+}
+
+
+@keyframes fuma3 {
+
+    from {
+        transform:
+            translate(-10px, 20px)
+            scale(.6);
+
+        opacity: 0;
+    }
+
+    30% {
+        opacity: .5;
+    }
+
+    to {
+        transform:
+            translate(20px, -350px)
+            scale(2.8);
+
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================
+   TEXTOS
+========================= */
+
+.frase {
+
+    margin-top: 25px;
+
+    text-align: center;
+
+    color: #aaa;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+}
+
+
+.mensagem-final {
+
+    margin-top: 20px;
+
+    color: #555;
+
+    opacity: 0;
+
+    animation:
+        aparecerMensagem 2s forwards 12.5s;
+
+}
+
+
+@keyframes aparecerMensagem {
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================
+   CINZAS
+========================= */
+
+.cinzas {
+
+    position: relative;
+
+    width: 500px;
+    max-width: 90vw;
+
+    height: 160px;
+
+    margin-top: -50px;
+
+}
+
+
+/* partículas */
+
+.cinza {
+
+    position: absolute;
+
+    width: 6px;
+    height: 6px;
+
+    background: #686068;
+
+    border-radius: 50%;
+
+    top: -300px;
+
+    opacity: 0;
+
+    animation:
+        cairCinza 4s forwards;
+
+}
+
+
+@keyframes cairCinza {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    20% {
+        opacity: .8;
+    }
+
+    100% {
+
+        opacity: .4;
+
+        transform:
+            translateY(330px)
+            rotate(720deg);
+    }
+
+}
+
+
+/* =========================
+   FIM
+========================= */
+
+.fim {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 25px;
+
+    opacity: 0;
+
+    animation:
+        mostrarFim 2s forwards 15s;
+
+}
+
+
+@keyframes mostrarFim {
+
+    from {
+        opacity: 0;
+        filter: blur(15px);
+    }
+
+    to {
+        opacity: 1;
+        filter: blur(0);
+    }
+
+}
+
+
+.fim a {
+
+    text-decoration: none;
+
+    color: #5d565f;
+
+    font-size:
+        clamp(60px, 13vw, 125px);
+
+    font-weight: 900;
+
+    letter-spacing: 10px;
+
+    text-shadow:
+
+        2px 2px #222,
+        -2px -2px #111;
+
+    transition: .3s;
+
+    cursor: default;
+
+}
+
+
+/*
+Quando a pessoa passa o mouse
+em cima do FIM...
+*/
+
+.fim a:hover {
+
+    color: #b968ff;
+
+    text-shadow:
+        0 0 15px #8b22d6,
+        0 0 35px #7b00c7;
+
+}
+
+
+/* pista só aparece no hover */
+
+.endereco {
+
+    position: absolute;
+
+    bottom: 0;
+
+    width: 100%;
+
+    text-align: center;
+
+    color: #8b4bab;
+
+    font-size: 14px;
+
+    letter-spacing: 4px;
+
+    opacity: 0;
+
+    transition: .5s;
+
+}
+
+
+.fim:hover + .endereco {
+    opacity: 1;
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media(max-width:600px) {
+
+    h1 {
+        letter-spacing: 7px;
+    }
+
+    .cigarro-container {
+        height: 430px;
+    }
+
+    .fim a {
+        letter-spacing: 3px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="pagina">
+
+    <h1>
+        CIGARRO
+    </h1>
+
+
+    <div class="cigarro-container">
+
+        <!-- FUMAÇA -->
+
+        <div class="fumaca f1"></div>
+        <div class="fumaca f2"></div>
+        <div class="fumaca f3"></div>
+
+
+        <!-- BRASA -->
+
+        <div class="brasa"></div>
+
+
+        <!-- SUA IMAGEM -->
+
+        <img
+            class="cigarro"
+            src="https://drive.google.com/thumbnail?id=1c9ZnTmqu6OWKbdIY_544l-kQFupGPgGp&sz=w1200"
+            alt="Cigarro"
+        >
+
+    </div>
+
+
+    <div class="frase">
+
+        Você decodificou uma palavra inteira
+        só para chegar aqui.
+
+        <br><br>
+
+        A fumaça distrai.
+        <br>
+        <strong>O que sobra é que importa.</strong>
+
+    </div>
+
+
+    <div class="mensagem-final">
+
+        não tem mais nada aqui.
+
+    </div>
+
+
+
+    <!-- CINZAS -->
+
+    <div class="cinzas" id="cinzas">
+
+
+        <div class="fim">
+
+            <a href="fim.html">
+
+                FIM
+
+            </a>
+
+        </div>
+
+
+        <div class="endereco">
+
+            /fim.html
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<script>
+
+/* =========================
+   CRIA AS CINZAS
+========================= */
+
+const area = document.getElementById("cinzas");
+
+for(let i = 0; i < 80; i++) {
+
+    const cinza =
+        document.createElement("div");
+
+    cinza.classList.add("cinza");
+
+
+    /* posição aleatória */
+
+    cinza.style.left =
+        (Math.random() * 90 + 5) + "%";
+
+
+    /* tamanho aleatório */
+
+    const tamanho =
+        Math.random() * 5 + 2;
+
+    cinza.style.width =
+        tamanho + "px";
+
+    cinza.style.height =
+        tamanho + "px";
+
+
+    /* começa a cair durante a queima */
+
+    cinza.style.animationDelay =
+        (
+            Math.random() * 8 + 4
+        ) + "s";
+
+
+    area.appendChild(cinza);
+
+}
+
+</script>
+
+
+</body>
+</html>
