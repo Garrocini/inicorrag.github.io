@@ -26,9 +26,7 @@
         }
 
 
-        /* =========================
-           TOPO
-        ========================= */
+        /* TOPO */
 
         header {
             height: 85px;
@@ -84,9 +82,7 @@
         }
 
 
-        /* =========================
-           HERO
-        ========================= */
+        /* HERO */
 
         .hero {
             min-height: 680px;
@@ -102,17 +98,18 @@
             padding: 70px 7%;
 
             background:
-            radial-gradient(
-                circle,
-                rgba(255,255,255,0.15) 2px,
-                transparent 2px
-            ),
-            linear-gradient(
-                135deg,
-                #3a096b 0%,
-                #6d22c7 45%,
-                #a855f7 100%
-            );
+                radial-gradient(
+                    circle,
+                    rgba(255,255,255,0.15) 2px,
+                    transparent 2px
+                ),
+                linear-gradient(
+                    135deg,
+                    #240046,
+                    #5a189a,
+                    #9d4edd,
+                    #c77dff
+                );
 
             background-size: 25px 25px, 100% 100%;
 
@@ -218,9 +215,7 @@
         }
 
 
-        /* =========================
-           PERSONAGEM
-        ========================= */
+        /* PERSONAGEM */
 
         .personagem-area {
             width: 45%;
@@ -233,12 +228,6 @@
 
             position: relative;
         }
-
-
-        /*
-        POR ENQUANTO É UM ESPAÇO
-        PARA COLOCARMOS SEU PERSONAGEM.
-        */
 
         .personagem-placeholder {
             width: 370px;
@@ -287,7 +276,7 @@
         }
 
 
-        /* RABISCOS CARTOON */
+        /* DETALHES CARTOON */
 
         .estrela {
             position: absolute;
@@ -305,20 +294,21 @@
         .estrela1 {
             top: 50px;
             right: 7%;
+
             transform: rotate(20deg);
         }
 
         .estrela2 {
             bottom: 40px;
             left: 48%;
+
             font-size: 45px;
+
             transform: rotate(-15deg);
         }
 
 
-        /* =========================
-           CONTEÚDOS
-        ========================= */
+        /* CONTEÚDOS */
 
         .conteudos {
             padding: 100px 7%;
@@ -435,9 +425,7 @@
         }
 
 
-        /* =========================
-           RODAPÉ
-        ========================= */
+        /* RODAPÉ */
 
         footer {
             min-height: 130px;
@@ -456,10 +444,16 @@
         }
 
 
+        /* LINK ESCONDIDO */
 
-        /* =========================
-           CELULAR
-        ========================= */
+        .link-secreto {
+            color: inherit;
+            text-decoration: none;
+            cursor: default;
+        }
+
+
+        /* CELULAR */
 
         @media(max-width: 800px) {
 
@@ -471,27 +465,22 @@
                 display: none;
             }
 
-
             .hero {
                 padding:
                     70px 25px;
             }
 
-
             .hero-container {
                 flex-direction: column;
             }
-
 
             .hero-texto {
                 width: 100%;
             }
 
-
             .hero-texto h1 {
                 letter-spacing: -4px;
             }
-
 
             .personagem-area {
                 width: 100%;
@@ -499,17 +488,14 @@
                 min-height: 400px;
             }
 
-
             .personagem-placeholder {
                 width: 270px;
                 height: 340px;
             }
 
-
             .cards {
                 grid-template-columns: 1fr;
             }
-
 
             .estrela2 {
                 display: none;
@@ -524,8 +510,6 @@
 
 <body>
 
-
-<!-- TOPO -->
 
 <header>
 
@@ -557,8 +541,6 @@
 
 
 
-<!-- PARTE PRINCIPAL -->
-
 <section class="hero">
 
     <div class="estrela estrela1">
@@ -572,8 +554,6 @@
 
     <div class="hero-container">
 
-
-        <!-- TEXTO -->
 
         <div class="hero-texto">
 
@@ -597,8 +577,6 @@
 
 
 
-        <!-- PERSONAGEM -->
-
         <div class="personagem-area">
 
             <div class="personagem-placeholder">
@@ -617,8 +595,6 @@
 </section>
 
 
-
-<!-- CONTEÚDOS -->
 
 <section
     class="conteudos"
@@ -699,7 +675,14 @@
     </div>
 
     <div>
-        © 2026
+        ©
+        <a
+            href="https://SEU-OUTRO-SITE.com"
+            class="link-secreto"
+            target="_blank"
+        >
+            2026
+        </a>
     </div>
 
 </footer>
